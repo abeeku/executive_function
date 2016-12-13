@@ -1,0 +1,25 @@
+// Place all the styles related to the Tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+input[type="checkbox"] {
+  margin: 0 !important ;
+}
+body {
+  background-color: white;
+}
+label {
+  display: inline !important;
+}
+ form {
+   margin: 0 0 10px !important;
+ }
+ h2 {
+   font-family: 'Roboto Condensed', Helvetica, sans-serif;
+ }
+.del-link {
+	text-decoration:none;
+	&:hover{
+	color:white;
+	background-color: #3760cc;
+	}
+}

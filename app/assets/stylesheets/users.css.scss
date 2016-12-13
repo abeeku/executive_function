@@ -1,0 +1,99 @@
+// Place all the styles related to the User controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#regist {
+		-webkit-border-radius:4px;
+-moz-border-radius:4px;
+border-radius:4px;
+		background:#fff;background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#fff),color-stop(100%,#ddd));background:-webkit-linear-gradient(top,#fff 0,#ddd 100%);background:-moz-linear-gradient(top,#fff 0,#ddd 100%);background:-ms-linear-gradient(top,#fff 0,#ddd 100%);background:-o-linear-gradient(top,#fff 0,#ddd 100%);background:linear-gradient(top,#fff 0,#ddd 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#dddddd',GradientType=0);border-left:solid 1px #eee;border-right:solid 1px #eee;border-bottom:solid 1px #ccc;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.1);-moz-box-shadow:0 1px 0 rgba(0,0,0,.1);box-shadow:0 1px 0 rgba(0,0,0,.1);
+		width:400px;
+		height:auto;
+		div {
+		margin-bottom: 15px;
+		}
+	}
+#regist input[type="text"]:hover,#regist input[type="password"]:hover,#regist select:hover, , #regist input[type="email"]:hover {
+    border: 2px solid #000099;
+
+}
+p {
+    font-family:Verdana, Geneva, sans-serif;  font-size:16px;
+}
+#regist input[type="text"],#regist input[type="password"],#regist select, #regist input[type="email"] {
+font-family:Verdana, Geneva, sans-serif;
+border: 1px solid #000;
+font-size:16px;
+-webkit-appearance: none;
+-webkit-rtl-ordering: logical;
+-webkit-user-select: text;
+-webkit-writing-mode: horizontal-tb;
+background-color: rgb(255, 255, 255);
+border-bottom-color: rgb(0, 0, 0);
+border-bottom-left-radius: 4px;
+border-bottom-right-radius: 4px;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-image-outset: 0px;
+border-image-repeat: stretch;
+border-image-slice: 100%;
+border-image-source: none;
+border-image-width: 1;
+border-left-color: rgb(0, 0, 0);
+border-left-style: solid;
+border-left-width: 1px;
+border-right-color: rgb(0, 0, 0);
+border-right-style: solid;
+border-right-width: 1px;
+border-top-color: rgb(0, 0, 0);
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;
+border-top-style: solid;
+border-top-width: 1px;
+color: rgb(0, 0, 0);
+cursor: auto;
+display: inline-block;
+font-family: Verdana, Geneva, sans-serif;
+font-size: 16px;
+height: 19px;
+letter-spacing: normal;
+line-height: normal;
+margin-bottom: 2px;
+margin-left: 2px;
+margin-right: 2px;
+margin-top: 2px;
+padding-bottom: 1px;
+padding-left: 1px;
+padding-right: 1px;
+padding-top: 1px;
+text-align: start;
+text-indent: 0px;
+text-shadow: none;
+text-transform: none;
+width: 223px;
+word-spacing: 0px;
+writing-mode: lr-tb;
+	border-radius:4px;
+ }
+ #regist input[type="text"]:focus,#regist input[type="password"]:focus,#regist select:focus, #regist input[type="email"]:focus { 
+ background-color:#333;
+ color:#FFF;
+ }
+body {
+  h2 {
+     color: white;
+     font:bold 32px  'Roboto Condensed',Arial, Sans-Serif;
+    // -webkit-text-stroke: 2px black;
+    /* text-stroke:
+           3px 3px 0 #000,
+           -1px -1px 0 #000,
+           1px -1px 0 #000,
+           -1px 1px 0 #000,
+           1px 1px 0 #000;
+    */
+
+   }
+  background-color: #019AD2;
+}

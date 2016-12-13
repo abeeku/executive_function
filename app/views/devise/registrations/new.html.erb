@@ -1,0 +1,48 @@
+<%	content_for :style do %>
+  <%= stylesheet_link_tag 'users' %>
+<%  end %>
+<% title "Register" %>
+
+<h2>Register</h2>
+<table style="width: 100%">
+  <tr>
+    <td style="width: 47%">
+
+    </td>
+    <td style="width: 48%;">
+      <%#         %>
+      <div id="regist">
+
+
+
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+ <div>
+  <%= f.text_field :first_name, 
+				:class => 'js-first-name',
+				:placeholder => 'First Name'
+ 				   %></div>
+<div>
+  <%= f.text_field :last_name, 
+:class => 'js-last-name',:placeholder => 'Last Name'
+ %></div>
+<div>
+  <%= f.text_field :username, 
+:class => 'js-last-name',:placeholder => 'Username'
+ %></div>
+  <div>
+  <%= f.email_field :email, :autofocus => true, :class => 'js-email',:placeholder => 'Email' %></div>
+
+  <div>
+  <%= f.password_field :password ,:placeholder => 'Password' %></div>
+
+  <div>
+  <%= f.password_field :password_confirmation, :class => 'js-password-confirmation',:placeholder => 'Password Confirmation'  %></div>
+
+  <div><%= f.submit "Create My Account", :class => 'btn btn-info' %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>
+    </td>
+    </table>

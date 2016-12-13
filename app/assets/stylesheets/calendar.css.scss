@@ -1,0 +1,32 @@
+// Place all the styles related to the Calendar controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+select {
+	width:57px !important;
+	display:inline !important;
+}
+#event_starts_at_4i, #event_ends_at_4i {
+  width:79px !important;
+}
+#event_ends_at_1i, #event_starts_at_1i {
+  width:64px !important;
+}
+
+.field {
+  margin: 10px 10px;
+}
+.new-event-desc {
+  height: 100px;
+
+}
+#new_event_form {
+  border: 2px solid #39d0dd;
+  background-color: #cdfff8;
+  position: fixed;
+  display: inline-block;
+  width: auto;
+  z-index: 1000;
+}
+#add_event_button {
+ height: 110px;
+}

@@ -1,0 +1,53 @@
+<% content_for :style do %>
+<%= stylesheet_link_tag "calendar" %>
+
+<% end %><div id="new_event_form">
+<%=	 link_to ' close', '#new_event_form', :class => ' icon-large icon-remove-sign close' %>
+
+<script>
+    $(function() {
+        $('a.close').click(function() {
+            $($(this).attr('href')).remove();
+            $('#new_event').show();
+            return false;
+        });
+    });
+</script>
+
+<%= form_for(@event) do |f| %>
+    <% if @event.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@event.errors.count, "error") %> </h2>
+
+          <ul>
+            <% @event.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <%= f.check_box :all_day, :style => 'margin-left: 15px;' %>
+      <%= f.label :all_day %>
+
+    </div>
+    <div class="field">
+      <%= f.label :starts_at %>
+      <%= f.datetime_select :starts_at, :default => Time.now.strftime('%b-%d-%Y %l:%M:%S').to_datetime, :order => [:month, :day, :year], use_short_month: true, ampm: true, :style => 'border-radius: 0px;' %>
+    </div>
+    <div class="field">
+      <%= f.label :ends_at %>
+      <%= f.datetime_select :ends_at, :default => Time.now.strftime('%b-%d-%Y %l:%M:%S').to_datetime, :order => [:month, :day, :year], use_short_month: true, ampm: true, :style => 'border-radius: 0px;'  %>
+    </div>
+
+
+    <div class="field">
+      <%# f.label 'Describe this event' %><br />
+      <%= f.text_area :description, :placeholder => 'Describe this Event', :class => 'new-event-desc' %>
+
+      <%= f.submit "Add Event", :class => 'btn btn-warning', :id => 'add_event_button' %>
+    </div>
+<% end %></div>

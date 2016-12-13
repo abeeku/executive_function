@@ -1,0 +1,63 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <a class="brand" href="<%=	 root_url %>"><%#	 image_tag 'logo_opt.gif', :mouseover => 'logohover_opt.png', :width => '50px', :height => '40px' %><%#	 image_tag 'Untitled-2letters_opt.png', height: '40px' %></a>
+
+    <form class="navbar-search pull-left">
+      <input type="text" class="search-query" placeholder="Search">
+    </form>
+    <ul class="nav">
+      <li>
+        <%= link_to 'Agenda', controller: 'calendar', action: 'index' %>
+      </li>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">ComeToChat</a></li>
+      <li>
+        <%= link_to "Games", '#' %>
+      </li>
+    </ul>
+
+    <ul class="nav pull-right">
+      <% if user_signed_in? %>
+
+          <li class="dropdown"><a href="#" id="menubar_drop" role="button" class="dropdown-toggle" data-toggle="dropdown"><%#  image_tag current_user.profile(:menubar).to_s %> <%=  "#{current_user.first_name}" %><strong style="color: white" class="caret"></strong></a>
+
+            <ul class="dropdown-menu" role='menu'>
+              <li role="presentation"><%#	 link_to 'View My Profile', profile_for(current_user) %></li>
+              <li>
+                <h3> Friend Requests </h3>
+                <ul id="requested_friends_list">
+                  <%#   current_user.requested_friends.each do |rf| %>
+                      <div class="friendship_friend">
+                        <li>   <%#   image_tag rf.profile(:menubar) %>   <%#  link_to rf.full_name, profile_for(rf) %>
+                          <%#  link_to 'Accept', {:controller => 'friendships', action: 'accept', :id => rf.id } , class: 'btn btn-info' %>
+                        </li>
+                      </div>
+                  <%#   end %>
+                </ul>
+              </li>
+              <li><%= link_to "Messages", '#{messages_url}' %></li>
+            </ul>
+
+          </li>
+          <li class="divider-vertical"></li>
+          <li><%=	 link_to 'Log Out', destroy_user_session_path, :method => :delete %></li>
+      <% else %>
+          <li><%=	 link_to 'Register', new_user_registration_path %></li>
+          <li class="divider-vertical"></li>
+          <li class="dropdown">
+            <a  href="#" id="drop2" role="button" class="dropdown-toggle" data-toggle="dropdown">Log In <b class="caret"></b></a>
+            <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+             <%=	form_for("user", :url => user_session_path) do |f|%>
+                  <%=	 f.email_field :email %>
+                  <%=	 f.password_field :password %>
+                  <%=	 f.check_box :remember_me %>
+                  <%=	 f.submit 'Log In' %>
+                  <%= link_to 'Forgot Your Password?', new_password_path('user') %>
+            <% end  %>
+
+            </div>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

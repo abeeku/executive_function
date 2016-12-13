@@ -1,0 +1,14 @@
+<%= form_for task, remote: true do |f| %>
+    <% if current_user == task.user %>
+        <%= f.check_box :complete  %>
+    <% else %>
+        <%= f.check_box :complete, :disabled => true  %>
+    <% end %>
+
+
+    <%=  task.name %>
+    <%# f.submit "Update"  %>
+    <%#	 link_to "Edit", '#', :class => 'icon-large icon-edit',:id => 'edit'  %>
+    <%= link_to "Delete", task, method: :delete, :class => 'icon-large icon-trash del-link', remote: true if current_user == task.user %>
+
+<% end %>

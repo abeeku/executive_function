@@ -1,0 +1,17 @@
+<% content_for :style do %>
+<%= stylesheet_link_tag "fullcalendar.css" %>
+<%= stylesheet_link_tag "application.css" %>
+<%= javascript_include_tag "jquery.js" %>
+<%= javascript_include_tag "jquery.rest.js" %>
+<%= javascript_include_tag "rails.js" %>
+
+
+<!-- these are needed for the calendar. -->
+<%= javascript_include_tag "jquery-ui-1.8.11.custom.min.js" %>
+    <%= stylesheet_link_tag "calendar" %>
+
+
+<% end %>
+<%= link_to " Add Event", new_event_path, :remote => true, :id => 'new_event', :class => 'icon-large icon-plus-sign' %>
+
+<div id='calendar'></div>
